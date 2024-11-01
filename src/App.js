@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import './App.css'; 
+import './App.css';
 import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({ first_name: 'пользователь' });
   const [tg, setTg] = useState(null);
   const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
-    // Инициализация Telegram WebApp
-    if (window.Telegram.WebApp) {
+    // Проверяем, доступен ли window.Telegram
+    if (window.Telegram && window.Telegram.WebApp) {
       const telegram = window.Telegram.WebApp;
       telegram.ready();
       setTg(telegram);
@@ -17,14 +17,21 @@ function App() {
 
       // Устанавливаем цвет фона в зависимости от темы Telegram
       document.body.style.backgroundColor = telegram.themeParams.bg_color || '#ffffff';
-
-      // Получаем данные для графика (пример данных)
-      fetchChartData();
+    } else {
+      // Если window.Telegram недоступен, используем дефолтные значения
+      setTg({
+        sendData: (data) => console.log('Отправка данных боту:', data),
+      });
+      // Устанавливаем цвет фона по умолчанию
+      document.body.style.backgroundColor = '#ffffff';
     }
+
+    // Получаем данные для графика
+    fetchChartData();
   }, []);
 
   const fetchChartData = () => {
-    // Здесь ты можешь реализовать получение реальных данных
+    // Пример данных для графика
     const data = [
       { time: '10:00', price: 50000 },
       { time: '11:00', price: 50500 },
@@ -43,13 +50,17 @@ function App() {
       take_profit: 55000,
       stop_loss: 48000,
     };
-    // Отправляем данные боту
-    tg.sendData(JSON.stringify(orderData));
+    // Отправляем данные боту (или логируем в консоль)
+    if (tg && tg.sendData) {
+      tg.sendData(JSON.stringify(orderData));
+    } else {
+      console.log('Отправка данных боту:', orderData);
+    }
   };
 
   return (
     <div className="app">
-      <h1 className="title">Здравствуйте, {user ? user.first_name : 'пользователь'}!</h1>
+      <h1 className="title">Здравствуйте, {user.first_name}!</h1>
       <p className="description">
         Добро пожаловать в ваше торговое приложение. Вы можете просмотреть график и отправить торговый ордер вашему боту.
       </p>
