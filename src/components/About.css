@@ -1,0 +1,30 @@
+/* src/components/About.css */
+
+.about {
+    padding: 50px;
+    text-align: center;
+    animation: fadeIn 1s;
+  }
+  
+  .about h1 {
+    font-size: 2.5em;
+    color: #64ffda; /* Оранжевый акцент */
+  }
+  
+  .about p {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #e6f1ff; /* Светлый текст */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

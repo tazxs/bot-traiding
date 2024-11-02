@@ -1,0 +1,28 @@
+/* src/components/Home.css */
+
+.home {
+    padding: 50px;
+    text-align: center;
+    animation: fadeIn 1s;
+  }
+  
+  .home h1 {
+    font-size: 2.5em;
+  }
+  
+  .home p {
+    font-size: 1.2em;
+    margin-top: 20px;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

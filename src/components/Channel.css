@@ -1,0 +1,39 @@
+/* src/components/Channel.css */
+
+.channel {
+    padding: 50px;
+    text-align: center;
+    animation: fadeIn 1s;
+  }
+  
+  .channel h1 {
+    font-size: 2.5em;
+    color: #64ffda; /* Оранжевый акцент */
+  }
+  
+  .channel p {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #e6f1ff; /* Светлый текст */
+  }
+  
+  .channel a {
+    color: #64ffda;
+    text-decoration: none;
+  }
+  
+  .channel a:hover {
+    text-decoration: underline;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
