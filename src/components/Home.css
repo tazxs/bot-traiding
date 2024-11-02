@@ -1,28 +1,56 @@
 /* src/components/Home.css */
 
 .home {
-    padding: 50px;
-    text-align: center;
-    animation: fadeIn 1s;
+  padding: 50px;
+  text-align: center;
+  animation: fadeIn 1s;
+}
+
+.home h1 {
+  font-size: 2.5em;
+}
+
+.home p {
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .home {
+    padding: 30px 20px;
   }
-  
+
   .home h1 {
-    font-size: 2.5em;
+    font-size: 2em;
   }
-  
+
   .home p {
-    font-size: 1.2em;
-    margin-top: 20px;
+    font-size: 1em;
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 20px 10px;
   }
-  
+
+  .home h1 {
+    font-size: 1.5em;
+  }
+
+  .home p {
+    font-size: 0.9em;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

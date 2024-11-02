@@ -1,68 +1,93 @@
 /* src/components/Coins.css */
 
 .coins {
-    padding: 50px;
-    text-align: center;
-    animation: fadeIn 1s;
+  padding: 50px;
+  text-align: center;
+  animation: fadeIn 1s;
+}
+
+.coins h1 {
+  font-size: 2.5em;
+  color: #64ffda;
+}
+
+.coins p {
+  font-size: 1.2em;
+  margin-top: 20px;
+  color: #e6f1ff;
+}
+
+/* Стили для списка монет */
+.coins-list {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.coin-item {
+  background-color: #112240;
+  padding: 20px;
+  border-radius: 8px;
+  width: 200px;
+  animation: fadeInUp 1s;
+}
+
+.coin-item h3 {
+  margin-top: 0;
+  color: #64ffda;
+}
+
+.coin-item p {
+  font-size: 1em;
+  color: #e6f1ff;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .coins {
+    padding: 30px 20px;
   }
-  
+
   .coins h1 {
-    font-size: 2.5em;
-    color: #64ffda; /* Оранжевый акцент */
+    font-size: 2em;
   }
-  
+
   .coins p {
-    font-size: 1.2em;
-    margin-top: 20px;
-    color: #e6f1ff; /* Светлый текст */
-  }
-  
-  /* Стили для списка монет */
-  .coins-list {
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .coin-item {
-    background-color: #112240;
-    padding: 20px;
-    border-radius: 8px;
-    width: 200px;
-    animation: fadeInUp 1s;
-  }
-  
-  .coin-item h3 {
-    margin-top: 0;
-    color: #64ffda;
-  }
-  
-  .coin-item p {
     font-size: 1em;
-    color: #e6f1ff;
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+  .coin-item {
+    width: 45%;
   }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+}
+
+@media (max-width: 480px) {
+  .coins {
+    padding: 20px 10px;
   }
-  
+
+  .coins h1 {
+    font-size: 1.5em;
+  }
+
+  .coins p {
+    font-size: 0.9em;
+  }
+
+  .coin-item {
+    width: 100%;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

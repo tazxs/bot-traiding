@@ -1,30 +1,58 @@
 /* src/components/About.css */
 
 .about {
-    padding: 50px;
-    text-align: center;
-    animation: fadeIn 1s;
+  padding: 50px;
+  text-align: center;
+  animation: fadeIn 1s;
+}
+
+.about h1 {
+  font-size: 2.5em;
+  color: #64ffda;
+}
+
+.about p {
+  font-size: 1.2em;
+  margin-top: 20px;
+  color: #e6f1ff;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .about {
+    padding: 30px 20px;
   }
-  
+
   .about h1 {
-    font-size: 2.5em;
-    color: #64ffda; /* Оранжевый акцент */
+    font-size: 2em;
   }
-  
+
   .about p {
-    font-size: 1.2em;
-    margin-top: 20px;
-    color: #e6f1ff; /* Светлый текст */
+    font-size: 1em;
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 20px 10px;
   }
-  
+
+  .about h1 {
+    font-size: 1.5em;
+  }
+
+  .about p {
+    font-size: 0.9em;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,57 +1,106 @@
 /* src/components/Subscription.css */
 
 .subscription {
-    padding: 50px;
-    text-align: center;
+  padding: 50px;
+  text-align: center;
+}
+
+.subscription h1 {
+  font-size: 2.5em;
+  color: #64ffda;
+}
+
+.subscription p {
+  font-size: 1.2em;
+  margin-top: 20px;
+  color: #e6f1ff;
+}
+
+.plans {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.plan {
+  background-color: #112240;
+  padding: 20px;
+  border-radius: 8px;
+  width: 200px;
+  animation: fadeInUp 1s;
+}
+
+.plan h3 {
+  margin-top: 0;
+  color: #64ffda;
+}
+
+.plan p {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: #e6f1ff;
+}
+
+.plan button {
+  background-color: #64ffda;
+  color: #112240;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.plan button:hover {
+  background-color: #52e0c4;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .subscription {
+    padding: 30px 20px;
   }
-  
-  .plans {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 30px;
+
+  .subscription h1 {
+    font-size: 2em;
   }
-  
+
+  .subscription p {
+    font-size: 1em;
+  }
+
   .plan {
-    background-color: #112240;
-    padding: 20px;
-    border-radius: 8px;
-    width: 200px;
-    animation: fadeInUp 1s;
+    width: 45%;
   }
-  
-  .plan h3 {
-    margin-top: 0;
+}
+
+@media (max-width: 480px) {
+  .subscription {
+    padding: 20px 10px;
   }
-  
-  .plan p {
+
+  .subscription h1 {
     font-size: 1.5em;
-    margin: 10px 0;
   }
-  
-  .plan button {
-    background-color: #64ffda;
-    color: #112240;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+
+  .subscription p {
+    font-size: 0.9em;
   }
-  
-  .plan button:hover {
-    background-color: #52e0c4;
+
+  .plan {
+    width: 100%;
   }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
